@@ -3,56 +3,26 @@
 <head>
   <title>web1-html</title>
   <meta charset="utf-8">
-  <style>
-  body{
-    margin:0;
-  }
-    a {
-    color:black;
-    text-decoration: none;
-    }
-    .saw {
-      color:gray;
-    }
-    #active {
-      color:red;
-    }
-    h1 {
-      font-size:40px; text-align:center;
-      border-bottom:1px solid gray;
-      margin:0;
-      padding:20px;
-    }
-    ol{
-      border-right:1px solid gray;
-      width:100px;
-      margin:0;
-      padding:20px;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <audio controls>
     <source src="Panorama.mp3" type="audio/mpeg">
   </audio>
   <h1><a href="index.html">web</a></h1>
-    <ol>
-        <li><a href="1.html" class="saw">html</a></li>
-        <li><a href="2.html" class="saw" id="active">css</a></li>
-        <li><a href="3.html">javascript</a></li>
-    </ol>
-  <!--
-    <h1><a href="index.html"><font color="red">web</font></a></h1>
+  <div id="grid">
       <ol>
-          <li><a href="1.html"><font color="red">html</font></a></li>
-          <li><a href="2.html"><font color="red">css</font></a></li>
-          <li><a href="3.html"><font color="red">javascript</font></a></li>
+         <li><a href="1.html" class="saw">html</a></li>
+         <li><a href="2.html" class="saw" id="active">css</a></li>
+         <li><a href="3.html">javascript</a></li>
       </ol>
-    -->
-<p><a href="https://youtu.be/V3pkC1hE-as" title="html5 speieification">Hypertext markup language (html)</a>
-  <h1>html이란 무엇인가?</h1>
-  <p style="margin-top:45px;">hypertext markup language (html) is the standard markup </p>language fo <strong>creating web pages</strong> and <u>web</u> applictions.</br>
-  <p style="margin-top:45px;">
-  <img src="cording.jpg" width="200px"></p>
+     <div id="article">
+             <p>
+             <a href="https://youtu.be/V3pkC1hE-as" title="html5 speieification">Hypertext markup language (html)</a>
+                 <h2>html이란 무엇인가?</h2>
+                 <p style="margin-top:45px;">hypertext markup language (html) is the standard markup language fo <strong>creating web pages</strong> and <u>web</u> applictions.</br>
+                 <img src="cording.jpg" width="200px"></br>
+                 </p>
+    </div>
 </body>
 </html>
