@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+<head>
+  <title>web1-javascript</title>
+  <meta charset="utf-8">
+  <style>
+   .js{
+     font-weight:bold;
+     color:red;
+   }
+   #first{
+     color:green;
+   }
+   span{
+     color:blue;
+   }
+  </style>
+</head>
+<body>
+  <input type="button" value="night" onclick="
+    document.querySelector('body').style.backgroundColor='black';
+    document.querySelector('body').style.color='white';
+  ">
+  <input type="button" value="day"   onclick="
+    document.querySelector('body').style.backgroundColor='white';
+    document.querySelector('body').style.color='black';
+  ">
+  <h1><a href="index.html">web</a></h1>
+  <h2 style="background-color:coral;color:powderblue"> JavaScript </h2>
+  <p>
+    <span id="first" class="js">JavaScript</span>
+    <span class="js">JavaScript</span>
+    <span class="js">JavaScript</span>
+    <span class="js">JavaScript</span>
+    <span>CSS</span>
+  </p>
+</body>
+</html>
