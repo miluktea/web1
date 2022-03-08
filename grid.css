@@ -28,4 +28,31 @@ img {
   max-height: 100%;
   object-fit: contain;
 }
+
+.btn1 {
+  position: absolute;
+  top: 10%; left: 10%;
+  background-color: #f1f1f1;
+  color: black;
+  font-size: 13px;
+  padding: 16px 30px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  text-align: center;
+}
+.btn2 {
+  position: absolute;
+  top: 10%; right: 10%;
+  background-color: #f1f1f1;
+  color: black;
+  font-size: 13px;
+  padding: 16px 30px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  text-align: center;
+}
+
+
 </style>
