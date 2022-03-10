@@ -28,31 +28,32 @@ img {
   max-height: 100%;
   object-fit: contain;
 }
+.item2.img-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  background-color: #555;
+  color: white;
+  font-size: 16px;
+  padding: 12px 24px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
 
-.btn1 {
-  position: absolute;
-  top: 10%; left: 10%;
-  background-color: #f1f1f1;
-  color: black;
-  font-size: 13px;
-  padding: 16px 30px;
-  border: none;
-  cursor: pointer;
-  border-radius: 5px;
-  text-align: center;
+.container .btn:hover {
+  background-color: black;
 }
-.btn2 {
-  position: absolute;
-  top: 10%; right: 10%;
-  background-color: #f1f1f1;
-  color: black;
-  font-size: 13px;
-  padding: 16px 30px;
-  border: none;
-  cursor: pointer;
-  border-radius: 5px;
-  text-align: center;
-}
+
+input.img-button {
+ background: url( "ot.png" ) no-repeat;
+ border: none;
+ width: 120px;
+ height: 150px;
+ cursor: pointer;
+ }
 
 
 </style>
