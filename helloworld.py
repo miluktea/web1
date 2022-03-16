@@ -1,4 +1,4 @@
-#! C:\Program Files\Python310\python
+#! C:\Program Files\Python310\python.exe
 #!python
 a = 3+4+5
 b = a/3
