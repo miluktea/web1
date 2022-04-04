@@ -2,19 +2,28 @@ print("Content-Type: text/html")
 print()
 import cgi, os
 
-files = os. listdir('data')
-listStr = ''
-for item in files:
-    listStr = listStr + '<li><a href="index.py?id{name}">{name}</a></li>'.format(name=item)
+def getList():
+   files = os. listdir('data')
+   listStr = ''
+   for item in files:
+       listStr = listStr + '<li><a href="index.py?id{name}">{name}</a></   li>'.format(name=item)
+   return listStr
 
 form = cgi.FieldStorage()
 if 'id' in form:
     pageId = form["id"].value
     description = open('data/'+pageId, 'r').read()
     update_link = '<a href="update.py?id={}">uptate</a>'.format(pageId)
+    delete_action = '''
+        <form action="process_delete.py" method="post">
+           <input type="hidden" name="pageId" value="{}">
+           <input type="submit" value="delete">
+        </form>
 else:
     pageId = 'Welcome'
     description = 'Hello, web'
+    update_link = ''
+    delete_action = ''
 print('''<!doctype html>
 <html>
 <head>
@@ -24,6 +33,9 @@ print('''<!doctype html>
   <h1><a href="index.py">WEB</a></h1>
   <ol>
     {listStr}
+    {delete_action}
+    <h2>{title}</h2>
+    <p>{desc}</p>
   </ol>
   <a href="creat.py">create</a>
   <form action="process_update.py" method="post">
@@ -35,4 +47,9 @@ print('''<!doctype html>
    </form>
 </body>
 </html>
-'''.format(title=pageId, desc=description, listStr=listStr, form_default_title=pageID, form_default_description=description))
+'''.format(
+     title=pageId,
+     desc=description,
+     listStr=getList(),
+     form_default_title=pageID,
+     form_default_description=description))
