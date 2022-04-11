@@ -1,18 +1,18 @@
 print("Content-Type: text/html")
 print()
-import cgi, os
-
-def getList():
-   files = os. listdir('data')
-   listStr = ''
-   for item in files:
-       listStr = listStr + '<li><a href="index.py?id{name}">{name}</a></   li>'.format(name=item)
-   return listStr
+import cgi, os, view, html_sanitizer
+sanitizer = html_sanitizer.Sanitizer()
 
 form = cgi.FieldStorage()
 if 'id' in form:
-    pageId = form["id"].value
+    title = pageId = form["id"].value
     description = open('data/'+pageId, 'r').read()
+    #description = description.replace('<', '&lt;')
+    #description = description.replace('<', '&gt;')
+    title = sanitizer.sanitize(description)
+
+    description = sanitizer.sanitize(description)
+
     update_link = '<a href="update.py?id={}">uptate</a>'.format(pageId)
     delete_action = '''
         <form action="process_delete.py" method="post">
@@ -48,8 +48,8 @@ print('''<!doctype html>
 </body>
 </html>
 '''.format(
-     title=pageId,
+     title=title,
      desc=description,
-     listStr=getList(),
+     listStr=view.getList(),
      form_default_title=pageID,
      form_default_description=description))
